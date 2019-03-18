@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1"/>
+<title>Socail Feed</title>
+</head>
+<body>
+	<div>
+		<h1>
+			Hello, <span th:text="${profileName}"></span>!
+		</h1>
+		<h4>Here is your Twitter feed:</h4>
+
+		<div th:each="feed:${feed}">
+			<p th:text="${feed.fromUser}">From</p>
+			<p th:text="${feed.text}">message text</p>
+			<img th:if="${feed.entities}" th:src="${feed.entities.media}" />
+			<hr />
+		</div>
+	</div>
+	
+	<div>
+		<h1>
+			Hello, <span th:text="${profileName}"></span>!
+		</h1>
+		<h4>Here is your Facebook feed:</h4>
+
+		<div th:each="post:${post}">
+			<p th:text="${post.from.name}">From</p>
+			<p th:text="${post.message}">message text</p>
+			<img th:if="${post.picture}" th:src="${post.picture}" />
+			<hr />
+		</div>
+	</div>
+	
+	
+</body>
+</html>
