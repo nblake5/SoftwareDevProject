@@ -63,7 +63,7 @@ public class SocialController {
 		}
 		*/
 		PagedList<Post> post = facebook.feedOperations().getFeed();
-		List<Tweet> feed = twitter.timelineOperations().getHomeTimeline(50);
+		List<Tweet> feed = twitter.timelineOperations().getHomeTimeline(30);
 		model.addAttribute("feed", feed);
 		model.addAttribute("post", post);
 		model.addAttribute("profileNameT", twitter.userOperations().getScreenName());
