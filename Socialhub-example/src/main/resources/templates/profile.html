@@ -5,6 +5,19 @@
 <title>Socail Feed</title>
 </head>
 <body>
+	<div class="container">
+		
+			<th:block th:include="/_menu"></th:block>  
+		
+  			<div class="row">
+  					
+  				<div class="col-sm-12">
+  						<h2 th:utext="${message}"></h2>
+  				</div>
+  						
+  			</div>
+	</div>
+
 	<div>
 		<h1>
 			Hello, <span th:text="${profileNameT}"></span>!

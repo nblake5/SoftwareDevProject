@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/")
 public class SocialController {
 	
 	@Autowired
@@ -32,9 +31,28 @@ public class SocialController {
 		this.connectionRepository = connectionRepository;
 	}
 	
-	@GetMapping()
+	@GetMapping("/home")
+	public String springHome()
+	{
+		return "home";
+	}
+	
+	@GetMapping("accounts")
+	public String accounts()
+	{
+		return "accounts";
+	}
+	
+	
+	@GetMapping("/profile")
 	public String getAllFeeds(Model model)
 	{
+		/*
+		if(connectionRepository.getPrimaryConnection(Twitter.class) == null && connectionRepository.getPrimaryConnection(Facebook.class)==null)
+		{
+			return "home";
+		}
+		/*
 		if(connectionRepository.getPrimaryConnection(Twitter.class)==null)
 		{
 			return "redirect:/connect/twitter";
@@ -43,6 +61,7 @@ public class SocialController {
 		{
 			return "redirect:/connect/facebook";
 		}
+		*/
 		PagedList<Post> post = facebook.feedOperations().getFeed();
 		List<Tweet> feed = twitter.timelineOperations().getHomeTimeline(50);
 		model.addAttribute("feed", feed);

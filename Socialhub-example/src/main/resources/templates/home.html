@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1"/>
+<title>SocialHub Home</title>
+</head>
+<body>
+	<div class="container">
+		
+			<th:block th:include="/_menu"></th:block>  
+		
+  					<div class="row">
+  					
+  					<div class="col-sm-12">
+  						<h2 th:utext="${message}"></h2>
+  					</div>
+  						
+  				</div>
+		</div>
+		<h1>Welcome to the Social Hub!! You currently do not have any social accounts linked.</h1>
+</body>
+</html>
