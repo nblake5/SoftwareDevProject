@@ -12,17 +12,30 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
 	<link rel="stylesheet" href="custom.css"></link>
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
 </head>
 <body>
+	<header>
+		<h1>The Social Hub</h1>
+		<div class="top">
+			<a href="#" class="menu_icon"><i class="material-icons">dehaze</i></a>
+		</div>
+	</header>
+	<nav class="menu">
+			<a class="item_menu" th:href="@{/profile}">Home</a>
+			<a class="item_menu" th:href="@{/accounts}">Accounts</a>
+			<a class="item_menu" th:href="@{/profile}">Feeds</a>
+	</nav>
 	
-	<nav class="navbar navbar-expand-sm bg-info navbar-dark">
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
 	<ul class="navbar-nav">
-		<li class="nav-item active"><a class="nav-link" th:href="@{/profile}">Home</a></li>
 		<li class="nav-item active"><a class="nav-link" th:href="@{/connect/facebook}">Facebook</a></li>
 		<li class="nav-item active"><a class="nav-link" th:href="@{/connect/twitter}">Twitter</a></li>
 	</ul>
-	</nav>
 	<h2>This is the accounts connect page</h2>
-	
+	<footer>
+		The Social Hub
+	</footer>
 </body>
 </html>

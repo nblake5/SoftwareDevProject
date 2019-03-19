@@ -4,27 +4,27 @@
 	<meta charset="ISO-8859-1"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1"/>
 	<title>SocialHub Home</title>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"></link>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-social/5.1.1/bootstrap-social.css"></link>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
-	<link rel="stylesheet" href="custom.css"></link>
-</head>
-<body>
-	<div class="container">
-		
-			<th:block th:include="/_menu"></th:block>  
-		
-  					<div class="row">
-  					
-  					<div class="col-sm-12">
-  						<h2 th:utext="${message}"></h2>
-  					</div>
-  						
-  				</div>
+	  <link rel="stylesheet" href="custom.css"></link>
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
+	</head>
+	<body>
+	<header>
+		<h1>The Social Hub</h1>
+		<div class="top">
+			<a href="#" class="menu_icon"><i class="material-icons">dehaze</i></a>
 		</div>
+	</header>
+	<nav class="menu">
+			<a class="item_menu" th:href="@{/home}">Home</a>
+			<a class="item_menu" th:href="@{/accounts}">Accounts</a>
+			<a class="item_menu" th:href="@{/profile}">Feeds</a>
+	</nav>
+	
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script type="text/javascript" src="script.js"></script>
 		<h1>Welcome to the Social Hub!! You currently do not have any social accounts linked.</h1>
+	<footer>
+		The Social Hub
+	</footer>
 </body>
 </html>
