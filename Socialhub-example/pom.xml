@@ -56,6 +56,11 @@
   			<artifactId>spring-social-twitter</artifactId>
   			<version>1.1.2.RELEASE</version>
 		</dependency>
+		<dependency>
+  			<groupId>org.brunocvcunha.instagram4j</groupId>
+  			<artifactId>instagram4j</artifactId>
+  			<version>1.8</version>
+		</dependency>
 	</dependencies>
 
 	<build>

@@ -19,31 +19,41 @@
 			<a class="item_menu" th:href="@{/home}">Home</a>
 			<a class="item_menu" th:href="@{/accounts}">Accounts</a>
 			<a class="item_menu" th:href="@{/profile}">Feeds</a>
+			<a class="item_menu" th:href="@{/post}">New Post</a>
 	</nav>
 	
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 	<script type="text/javascript" src="script.js"></script>
 
 	<div id="wrapper">
+	
 		<div id="twitter">
-			<h1>Hello, <span th:text="${profileNameT}"></span>!</h1>
+			<h1><img id="socialLogo" th:src="twitter.png"/> Hello, <span th:text="${profileNameT}"></span>!</h1>
 			<h4>Here is your Twitter feed:</h4>
-		
 			<div th:each="feed:${feed}">
 				<p th:text="${feed.fromUser}">From</p>
-				<p th:text="${feed.text}">message text</p>
-				<img th:if="${feed.Entities}" th:src="${feed.Entities.Media}" />
+				<p th:text="${feed.getUnmodifiedText()}">message text</p>
+				<img id="socialImg" th:if="${feed.hasMedia()}" th:src="${feed.Entities.Media.get(0).MediaUrl}" alt="twitter image" />
 				<hr />
 			</div>
 		</div>
 	
 		<div id="facebook">
-			<h1>Hello, <span th:text="${profileNameF}"></span>!</h1>
+			<h1><img id="socialLogo" th:src="facebook.jpg"/> Hello, <span th:text="${profileNameF}"></span>!</h1>
 			<h4>Here is your Facebook feed:</h4>
 			<div th:each="post:${post}">
 				<p th:text="${post.from.name}">From</p>
 				<p th:text="${post.message}">message text</p>
 				<img th:if="${post.picture}" th:src="${post.picture}" />
+				<hr />
+			</div>
+		</div>
+		
+		<div id="instagram">
+			<h1><img id="socialLogo" th:src="instagram.jpg"/> Hello, <span th:text="${profileNameI}"></span>!</h1>
+			<h4>Here is your Instagram feed:</h4>
+			<div th:each="Ifeed:${Ifeed}">
+				<img th:src ="${Ifeed}" />
 				<hr />
 			</div>
 		</div>
