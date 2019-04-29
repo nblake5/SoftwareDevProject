@@ -16,7 +16,7 @@
 </head>
 <body>
 	<header>
-		<h1>The Social Hub</h1>
+		<h1><a th:href="@{/home}"><img th:src="socialhublogotransparent.png"/></a></h1>
 		<div class="top">
 			<a href="#" class="menu_icon"><i class="material-icons">dehaze</i></a>
 		</div>
@@ -25,17 +25,23 @@
 			<a class="item_menu" th:href="@{/home}">Home</a>
 			<a class="item_menu" th:href="@{/accounts}">Accounts</a>
 			<a class="item_menu" th:href="@{/profile}">Feeds</a>
-			<a class="item_menu" th:href="@{/post}">New Post</a>
+			<a class="item_menu" th:href="@{/newPost}">New Post</a>
 	</nav>
 	
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 	<script type="text/javascript" src="script.js"></script>
+	<div id="accountDiv">
+	<div id="accountHeader">
+  		<p>Linked Accounts</p>
+	</div>
+	<div id="linkContent">
 	<ul class="navbar-nav">
-		<li class="nav-item active"><a class="nav-link" th:href="@{/connect/facebook}">Facebook</a><p th:if="${facebook != null}" ><span th:text="${userNameF}"></span> is connected to Facebook</p></li>
-		<li class="nav-item active"><a class="nav-link" th:href="@{/connect/twitter}">Twitter</a><p th:if="${twitter != null}" ><span th:text="${userNameT}"></span> is connected to Twitter</p></li>
-		<li class="nav-item active"><a class="nav-link" th:href="@{/connect/instagram}">Instagram</a><p th:if="${twitter != null}" ><span th:text="${userNameI}"></span> is connected to Instagram</p></li>
+		<li class="nav-item active"><strong>Click to Link Facebook:</strong><a class="nav-link" th:href="@{/connect/facebook}"><img id="socialLogo" th:src="facebook.jpg"/></a><p class="linkedAccountText" th:if="${facebook != null}" ><span th:text="${userNameF}"></span> is connected to Facebook</p><br></br></li>
+		<li class="nav-item active"><strong>Click to Link Twitter:</strong><a class="nav-link" th:href="@{/connect/twitter}"><img id="socialLogo" th:src="twitter.png"/></a><p class="linkedAccountText" th:if="${twitter != null}" ><span th:text="${userNameT}"></span> is connected to Twitter</p><br></br></li>
+		<li class="nav-item active"><strong>Click to Link Instagram:</strong><a class="nav-link" th:href="@{/connect/instagram}"><img id="socialLogo" th:src="instagram.jpg"/></a><p class="linkedAccountText" th:if="${twitter != null}" ><span th:text="${userNameI}"></span> is connected to Instagram</p></li>
 	</ul>
-	<h2>This is the accounts connect page</h2>
+	</div>
+	</div>
 	<footer>
 		The Social Hub
 	</footer>

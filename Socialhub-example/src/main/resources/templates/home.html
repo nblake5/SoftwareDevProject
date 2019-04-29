@@ -9,7 +9,7 @@
 	</head>
 	<body>
 	<header>
-		<h1>The Social Hub</h1>
+		<h1><a th:href="@{/home}"><img th:src="socialhublogotransparent.png"/></a></h1>
 		<div class="top">
 			<a href="#" class="menu_icon"><i class="material-icons">dehaze</i></a>
 		</div>
@@ -23,7 +23,10 @@
 	
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 	<script type="text/javascript" src="script.js"></script>
+	<div id="homeText">
 		<h1>Welcome to the Social Hub!! You currently do not have any social accounts linked.</h1>
+		<h2><a th:href="@{/accounts}">Click Here to Link Accounts</a></h2>
+	</div>
 	<footer>
 		The Social Hub
 	</footer>

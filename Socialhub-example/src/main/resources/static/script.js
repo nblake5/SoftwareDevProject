@@ -3,3 +3,5 @@ $(document).ready(function() {
 		$("nav.menu").toggleClass("menu_show");
 	});
 });
+
+$document.getElementById("media").required = false; 

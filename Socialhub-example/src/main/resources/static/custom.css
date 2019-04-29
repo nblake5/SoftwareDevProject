@@ -30,14 +30,14 @@ hr {
 }
 
 body {
-  background-color: #444;
+  background-color: #D3D3D3;
   margin: 0;
 }
 
 #wrapper {
   width: 100%;
   Width:100vw;
-  margin: auto;
+  margin:auto;
 }
 
 #twitter,
@@ -52,8 +52,8 @@ body {
   width: 33.2%;
   max-width:33.2%;
   height:815px;
-  background-color: #111;
-  overflow-y: auto;
+  background-color: #D3D3D3;
+  overflow-y:auto;
   resize: horizontal;
   
 }
@@ -62,17 +62,18 @@ body {
   width: 33.3%;
   max-width:33.3%;
   height: 815px;
-  background-color: #777;
-  overflow-y: auto;
+  background-color: #D3D3D3;
+  overflow-y:auto;
   resize: horizontal;
 }
 
 #instagram{
+  color:white;
   width: 33.2%;
   max-width:33.2%;
   height:815px;'
-  background-color: #111;
-  overflow-y: auto;
+  background-color: #D3D3D3;
+  overflow-y:auto;
   resize: horizontal;
 }
 style* { margin: 0 auto; font-family: sans-serif; }
@@ -81,7 +82,7 @@ body { margin: 0 auto; }
 
 header {
 	height: 70px;
-	background-color: #3e739d;
+	background-color: white;
 	border-bottom: 1px solid #494949;
 	display: flex;
 	align-items: center;
@@ -98,18 +99,18 @@ header > .top {
 	left: 20px;
 }
 header > .top a.menu_icon i {
-	color: #000;
+	color: #0048ff;
 	font-size: 40px;
 	padding-top: 5px;
 	transition: .2s ease;
 }
 header > .top a.menu_icon:hover i {
-	color: #fff;
+	color: #419a1c;
 }
 nav.menu {
 	width: 300px;
 	min-height: calc(100vh - 121px);
-	background-color: #03a9f4;
+	background-color: white;
 	position: absolute;
 	left: -300px;
 	transition: .3s all;
@@ -118,7 +119,7 @@ nav.menu > a {
     display: block;
     padding: 5px;
     margin: 15px 0 0px 20px;
-    color: #494949;
+    color: #0048ff;
     text-transform: uppercase;
 }
 main {
@@ -128,7 +129,7 @@ main {
 }
 footer {
 	height: 50px;
-	background-color: #494949;
+	background-color: #0048ff;
 	color: #fff;
 	display: flex;
 	align-items: center;
@@ -147,13 +148,22 @@ footer {
 		font-size: 16px;
 	}
 }
+
+.socialHeaders{
+	width:100%;
+	background-color: #419a1c;
+	border-style: solid;
+	border-color:white;
+	border-radius: 10px;
+}
 @media screen and (max-width: 360px) {
 	nav.menu {
 		width: 100%;
 		left: -100%; 
 	}
 }
-#socialImg{
+.socialImg{
+	width:auto;
 	max-width:100%;
 	height:auto;
 }
@@ -164,5 +174,140 @@ footer {
 }
 #socialLogo{
 	width:50px;
-	height:50px
+	height:50px;
+	border-radius: 50%;
+	box-shadow: 2px 2px 1px black;
+	margin-left:10px;
+}
+
+#profileImage{
+	margin-right:15px;
+	border-radius: 50%;
+	box-shadow: 2px 2px 1px black;
+}
+
+#postForm{
+	border-style: outset;
+	width:33.3%;
+	height:630px;
+	background-color: white;
+	position: absolute;
+	margin: auto;
+  	top: 0;
+  	right: 0;
+  	bottom: 0;
+  	left: 0;
+  	text-align: left;
+	display: inline-block;
+	border-radius: 10px;
+	box-shadow: 2px 2px 1px black;
+}
+#formHeader {
+  padding: 30px;
+  text-align: center;
+  background: #419a1c;
+  color: white;
+  font-size: 30px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 1px black;
+}
+
+
+#socialChoice{
+	text-align: center;
+	margin: auto;
+  	top: 0;
+  	right: 0;
+  	bottom: 0;
+  	left: 0;
+  	text-align: center;
+	display: block;
+}
+.labels{
+	display:inline;
+	padding-right:10px;
+}
+
+.post{
+	border-style: solid;
+	border-color:#0048ff;
+ 	box-shadow: 2px 2px 1px black;
+ 	padding-top: 10px;
+ 	border-radius: 10px;
+ 	background-color:#D3D3D3;
+ 	color:black;
+ 	min-height:300px;
+ 	height:auto;
+ 	text-align:center;
+ 	margin-bottom:10px;
+ 	
+}
+
+.overflow{
+	height:815px;
+	width: 100%;
+  	max-width:100%;
+}
+
+#homeText{
+	margin: auto;
+  	top: 0;
+  	right: 0;
+  	bottom: 0;
+  	left: 0;
+  	text-align: center;
+}
+
+.socialheadertext{
+	margin-left:10px;
+}
+
+#flashMessage{
+	text-align:center;
+	color:red;
+}
+
+#accountDiv{
+	border-style: outset;
+	width:33.3%;
+	height:630px;
+	background-color: white;
+	position: absolute;
+	margin: auto;
+  	top: 0;
+  	right: 0;
+  	bottom: 0;
+  	left: 0;
+  	text-align: center;
+	display: inline-block;
+	border-radius: 10px;
+	box-shadow: 2px 2px 1px black;
+}
+
+#accountHeader{
+  padding: 30px;
+  text-align: center;
+  background: #419a1c;
+  color: white;
+  font-size: 30px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 1px black;
+}
+
+#linkContent{
+	padding-top:10px;
+}
+
+.linkedAccountText{
+	color:#0048ff;
+}
+
+#namePic{
+	display:inline-flex;
+	width:auto;
+	height:auto;
+}
+
+.fromTxt{
+	font-weight:bold;
 }

@@ -10,7 +10,7 @@
 	</head>
 	<body>
 	<header>
-		<h1>The Social Hub</h1>
+		<h1><a th:href="@{/home}"><img th:src="socialhublogotransparent.png"/></a></h1>
 		<div class="top">
 			<a href="#" class="menu_icon"><i class="material-icons">dehaze</i></a>
 		</div>
@@ -19,7 +19,7 @@
 			<a class="item_menu" th:href="@{/home}">Home</a>
 			<a class="item_menu" th:href="@{/accounts}">Accounts</a>
 			<a class="item_menu" th:href="@{/profile}">Feeds</a>
-			<a class="item_menu" th:href="@{/post}">New Post</a>
+			<a class="item_menu" th:href="@{/newPost}">New Post</a>
 	</nav>
 	
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
@@ -28,33 +28,52 @@
 	<div id="wrapper">
 	
 		<div id="twitter">
+			<div class ="socialHeaders">
 			<h1><img id="socialLogo" th:src="twitter.png"/> Hello, <span th:text="${profileNameT}"></span>!</h1>
-			<h4>Here is your Twitter feed:</h4>
-			<div th:each="feed:${feed}">
-				<p th:text="${feed.fromUser}">From</p>
+			<h4 class="socialheadertext">Here is your Twitter feed:</h4>
+			</div>
+			<div class="spacer">
+			<div class="overflow">
+			<div class="post" th:each="feed:${feed}">
+				<div id="namePic">
+				<img id="profileImage" th:src = "${feed.getProfileImageUrl()}"/>
+				<p class="fromTxt" th:text="${feed.fromUser}">From</p>
+				</div>
 				<p th:text="${feed.getUnmodifiedText()}">message text</p>
-				<img id="socialImg" th:if="${feed.hasMedia()}" th:src="${feed.Entities.Media.get(0).MediaUrl}" alt="twitter image" />
-				<hr />
+				<img class="socialImg" th:if="${feed.hasMedia()}" th:src="${feed.Entities.Media.get(0).MediaUrl}" alt="twitter image" />
+			</div>
+			</div>
 			</div>
 		</div>
 	
 		<div id="facebook">
+			<div class="socialHeaders">
 			<h1><img id="socialLogo" th:src="facebook.jpg"/> Hello, <span th:text="${profileNameF}"></span>!</h1>
-			<h4>Here is your Facebook feed:</h4>
-			<div th:each="post:${post}">
-				<p th:text="${post.from.name}">From</p>
+			<h4 class="socialheadertext">Here is your Facebook feed:</h4>
+			</div>
+			<div class="spacer">
+			<div class="overflow">
+			<div class="post" th:each="post:${post}">
+				<p class="fromTxt" th:text="${post.from.name}">From</p>
 				<p th:text="${post.message}">message text</p>
-				<img th:if="${post.picture}" th:src="${post.picture}" />
-				<hr />
+				<img class="socialImg" th:if="${post.picture}" th:src="${post.picture}" />
+			</div>
+			</div>
 			</div>
 		</div>
 		
 		<div id="instagram">
+			<div class="socialHeaders">
 			<h1><img id="socialLogo" th:src="instagram.jpg"/> Hello, <span th:text="${profileNameI}"></span>!</h1>
-			<h4>Here is your Instagram feed:</h4>
-			<div th:each="Ifeed:${Ifeed}">
-				<img th:src ="${Ifeed}" />
-				<hr />
+			<h4 class="socialheadertext">Here is your Instagram feed:</h4>
+			</div>
+			<div class="spacer">
+			<div class="overflow">
+			<div class="post" th:each="Ifeed:${Ifeed}">
+				<p class="fromTxt" th:text="${profileNameI}"></p>
+				<img class="socialImg" th:src ="${Ifeed}" />
+			</div>
+			</div>
 			</div>
 		</div>
 	</div>
